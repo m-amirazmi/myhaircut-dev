@@ -1,0 +1,26 @@
+.__btn-primary {
+  background-color: $primary;
+  color: $light;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $primary-darker;
+    color: $light;
+  }
+}
+
+.__card-header {
+  .__card-title {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+  }
+
+  .__card-subtitle {
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+}
+
+.__text-small {
+  color: $gray-600;
+}

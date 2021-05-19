@@ -1,0 +1,25 @@
+@import '~bootstrap/scss/bootstrap.scss';
+$light: $gray-100;
+$primary: $orange-500;
+$primary-darker: $orange-700;
+
+body {
+  background-color: $gray-100;
+  color: $gray-900;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+
+  &:hover {
+    color: $primary-darker
+  }
+}
+
+@import './styles.scss';
+@import './utilities.scss';
