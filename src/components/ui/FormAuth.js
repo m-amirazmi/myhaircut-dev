@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import { Form, Formik } from 'formik'
 import TextInput from './TextInput'
 
-export default function FormAuth({ head, foot, forms, validations, submit }) {
+export default function FormAuth({ head, foot, forms, validations, submit, color = '' }) {
+
   const renderHeader = () => (
     <>
       <div className='d-flex align-items-center __card-header'>
@@ -19,7 +20,7 @@ export default function FormAuth({ head, foot, forms, validations, submit }) {
   const renderFooter = () => (
     <>
       <div className='mt-4 d-flex'>
-        <p className='ms-auto'>{foot.text} <Link to={foot.path} className='fw-bolder'>{foot.pathname}</Link></p>
+        <p className='ms-auto'>{foot.text} <Link to={foot.path} className={`fw-bolder ${color}`}>{foot.pathname}</Link></p>
       </div>
     </>
   )
@@ -30,10 +31,12 @@ export default function FormAuth({ head, foot, forms, validations, submit }) {
 
     return (
       <Formik initialValues={forms.initialValues} validationSchema={validations} onSubmit={submit.handleSubmit}>
-        <Form>
-          {inputs}
-          <button type='submit' className='btn __rounded-8 __btn-primary w-100'>{submit.btnText}</button>
-        </Form>
+        {({ isSubmitting }) => (
+          <Form>
+            {inputs}
+            <button disabled={isSubmitting} type='submit' className={`btn __rounded-8 __btn-primary ${color} w-100`}>{submit.btnText}</button>
+          </Form>
+        )}
       </Formik>
     )
   }

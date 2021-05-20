@@ -3,7 +3,7 @@ import { useField } from 'formik'
 export default function TextInput({ label, ...props }) {
   const [field, meta] = useField(props);
   return (
-    <div className='mb-3'>
+    <div data-testid={`test-${props.name}`} className='mb-3'>
       <div>
         <label className='form-label' htmlFor={props.id || props.name}>{label}</label>
       </div>

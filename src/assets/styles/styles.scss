@@ -7,6 +7,17 @@
     background-color: $primary-darker;
     color: $light;
   }
+
+  &.__secondary {
+    background-color: $secondary;
+    color: $light;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: $secondary-darker;
+      color: $light;
+    }
+  }
 }
 
 .__card-header {

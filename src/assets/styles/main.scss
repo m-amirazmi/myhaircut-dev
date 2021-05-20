@@ -2,6 +2,8 @@
 $light: $gray-100;
 $primary: $orange-500;
 $primary-darker: $orange-700;
+$secondary: $blue-500;
+$secondary-darker: $blue-700;
 
 body {
   background-color: $gray-100;
@@ -18,6 +20,15 @@ a {
 
   &:hover {
     color: $primary-darker
+  }
+
+  &.__secondary {
+    color: $secondary;
+    text-decoration: none;
+
+    &:hover {
+      color: $secondary-darker;
+    }
   }
 }
 
